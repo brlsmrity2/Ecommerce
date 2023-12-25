@@ -1,8 +1,8 @@
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,get_user_model
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
-from .forms import ContactForm,LoginForm
+from .forms import ContactForm,LoginForm, RegisterForm
 
 def home_page(request):
     context = {"title":"Smrity"}
@@ -43,6 +43,17 @@ def login_page(request):
             print("Error")
     return render(request,'auth/login.html',context)
 
-
+User =get_user_model()
 def register_page(request):
-    return render(request,'auth/register.html',{})
+    form = RegisterForm(request.POST or None)
+    context={
+        "form":form
+    }
+    if form.is_valid():
+        print(form.cleaned_data)
+        username = form.cleaned_data.get("username")
+        email = form.cleaned_data.get("email")
+        password = form.cleaned_data.get("password")
+        User.objects.create_user(username,email,password)
+        print(User)
+    return render(request,'auth/register.html',context)
