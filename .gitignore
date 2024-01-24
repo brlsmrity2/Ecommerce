@@ -2,4 +2,6 @@ static_cdn/admin/img/calendar-icons.svg
 src/ecommerce/__pycache__/settings.cpython-310.pyc
 .venv/
 venv/
-static_cdn/admin/
+static_cdn/static_root/admin/
+*.pyc/
+\__pycache__\forms.cpython-310.pyc
