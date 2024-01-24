@@ -27,3 +27,5 @@ __pycache__/
 **/__pycache__/
 src/ecommerce/__pycache__/urls.cpython-310.pyc
 src/db.sqlite3
+
+*.png
