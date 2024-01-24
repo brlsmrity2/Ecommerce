@@ -13,8 +13,13 @@ src/products/migrations/__init__.py
 src/products/migrations/0001_initial.py
 src/products/migrations/__pycache__/__init__.cpython-310.pyc
 src/products/migrations/__pycache__/0001_initial.cpython-310.pyc
-src/db.sqlite3
+db.sqlite3
 src/ecommerce/__pycache__/settings.cpython-310.pyc
 src/ecommerce/__pycache__/views.cpython-310.pyc
 src/ecommerce/__pycache__/settings.cpython-310.pyc
 src/products/__init__.py
+# Ignore the SQLite database file
+*.sqlite3
+
+# Ignore Django migration files
+**/migrations/
