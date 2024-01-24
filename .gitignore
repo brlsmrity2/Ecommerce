@@ -23,3 +23,6 @@ src/products/__init__.py
 
 # Ignore Django migration files
 **/migrations/
+__pycache__/
+**/__pycache__/
+src/ecommerce/__pycache__/urls.cpython-310.pyc
