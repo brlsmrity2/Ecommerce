@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 from django.contrib import admin
 from django.urls import path, include
@@ -27,6 +28,7 @@ urlpatterns = [
     path('contact/', contact_page, name='contact'),
     path('login/', login_page, name='login'),
     path('register/', register_page, name='register'),
+    path('bootstrap/', TemplateView.as_view(template_name='bootstrap/example.html')),
     path('products/', include('products.urls', namespace='products')),
 ]
 
