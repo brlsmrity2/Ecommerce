@@ -4,6 +4,7 @@ import random
 import os
 
 from django.db.models.query import QuerySet
+from django.urls import reverse
 
 # Create your models here.
 
@@ -58,7 +59,8 @@ class Product(models.Model):
     objects = ProductManager()
 
     def get_absolute_url(self):
-        return "/products/{slug}/".format(slug=self.slug)
+       # return "/products/{slug}/".format(slug=self.slug)
+       return reverse("products:ProductSlug", kwargs={"slug": self.slug})
 
 
     def __str__(self) -> str:
