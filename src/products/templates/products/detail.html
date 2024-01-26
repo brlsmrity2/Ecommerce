@@ -3,11 +3,15 @@
 
 {% block content %}
 
-
-{{object.title}}</br>
-
-{{object.description}}</br>
+<div class="container">
+    <div class ="row">
+        <div class="col  text-justify">
+<h1>{{object.title}}</h1></br>
+<h2>{{object.timestamp|timesince}} ago</h2></br>
+{{object.description|linebreaks}}</br>
 {{object.price}}</br>
 <img src='{{object.img.url}}'class ='img-fluid'/>
-
+        </div>
+    </div>
+</div>
 {% endblock %}
