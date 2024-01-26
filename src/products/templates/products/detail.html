@@ -1,6 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
 
 {{object.title}}</br>
 
 {{object.description}}</br>
 {{object.price}}</br>
 <img src='{{object.img.url}}'class ='img-fluid'/>
+
+{% endblock %}
